@@ -1,16 +1,16 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ProductItem = () => {
-  const previous = useNavigate();
+  const data = useParams();
+  const { id } = data;
+  const history = useNavigate();
   const handelback = () => {
-    if (previous) {
-      previous(-1);
-    }
+    history(-1);
   };
   return (
     <div>
-      <h1>Product Item 1</h1>
+      <h1>This is a Product {id} page</h1>
       <button onClick={handelback}>Go Back</button>
     </div>
   );
