@@ -1,16 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 const ProductItem = () => {
-  const history = useNavigate();
-  const handelRedirection = () => {
-    if (history) {
-      history("/product", { replace: true });
+  const previous = useNavigate();
+  const handelback = () => {
+    if (previous) {
+      previous(-1);
     }
   };
   return (
     <div>
       <h1>Product Item 1</h1>
-      <button onClick={handelRedirection}>Go Back</button>
+      <button onClick={handelback}>Go Back</button>
     </div>
   );
 };
