@@ -1,9 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment } from "react";
+import { Link, Routes, Route } from "react-router-dom";
+import Productcategory from "./ProductCategory";
+import ProductItem from "./ProductItem";
 
 const Product = () => {
   return (
-    <div>
+    <Fragment>
+      <Routes>
+        <Route
+          exact
+          path="/product/:category/:subcategory?"
+          element={<Productcategory />}
+        />
+        <Route exact path="/product/:id" element={<ProductItem />} />
+      </Routes>
       <h1>This is Product</h1>
       <ul>
         <li>
@@ -33,7 +43,7 @@ const Product = () => {
           <Link to="/product/Sperio">Product Superio</Link>
         </li>
       </ul>
-    </div>
+    </Fragment>
   );
 };
 
