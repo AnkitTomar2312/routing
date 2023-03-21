@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const ProductItem = () => {
   const data = useParams();
+  console.log(data);
   const { id } = data;
   const history = useNavigate();
   const handelback = () => {

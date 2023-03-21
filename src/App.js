@@ -17,7 +17,7 @@ const App = () => {
           <Route exact path="/product/:id" element={<ProductItem />} />
           <Route
             exact
-            path="/product/:category"
+            path="/product/:category/:subcategory?"
             element={<Productcategory />}
           />
           <Route exact path="/*" element={<Error />} />
