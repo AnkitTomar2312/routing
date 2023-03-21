@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Error from "./pages/Error";
 import Faq from "./pages/Faq";
 import Help from "./pages/Help";
 import Home from "./pages/Home";
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<Contact />} />
       </Route>
+      <Route path="*" element={<Error />}></Route>
     </Route>
   )
 );
