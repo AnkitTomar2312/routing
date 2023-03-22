@@ -6,6 +6,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import About from "./pages/About";
+import Career from "./pages/Career";
+import CareerInner, { carrerloader } from "./pages/CareerInner";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 import Faq from "./pages/Faq";
@@ -21,6 +23,9 @@ const router = createBrowserRouter(
       <Route path="/help" element={<Help />}>
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<Contact />} />
+      </Route>
+      <Route path="careers" element={<Career />}>
+        <Route index element={<CareerInner />} loader={carrerloader} />
       </Route>
       <Route path="*" element={<Error />}></Route>
     </Route>
