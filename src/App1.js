@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import About from "./pages/About";
 import Career from "./pages/Career";
+import CareerDetails, { careerDetailsLoader } from "./pages/CareerDetails";
+
 import CareerInner, { carrerloader } from "./pages/CareerInner";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
@@ -26,6 +28,11 @@ const router = createBrowserRouter(
       </Route>
       <Route path="careers" element={<Career />}>
         <Route index element={<CareerInner />} loader={carrerloader} />
+        <Route
+          path=":id"
+          element={<CareerDetails />}
+          loader={careerDetailsLoader}
+        />
       </Route>
       <Route path="*" element={<Error />}></Route>
     </Route>
