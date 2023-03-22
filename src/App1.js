@@ -8,6 +8,7 @@ import {
 import About from "./pages/About";
 import Career from "./pages/Career";
 import CareerDetails, { careerDetailsLoader } from "./pages/CareerDetails";
+import CareerError from "./pages/CareerError";
 
 import CareerInner, { carrerloader } from "./pages/CareerInner";
 import Contact from "./pages/Contact";
@@ -26,7 +27,7 @@ const router = createBrowserRouter(
         <Route path="faq" element={<Faq />} />
         <Route path="contact" element={<Contact />} />
       </Route>
-      <Route path="careers" element={<Career />}>
+      <Route path="careers" element={<Career />} errorElement={<CareerError />}>
         <Route index element={<CareerInner />} loader={carrerloader} />
         <Route
           path=":id"

@@ -24,5 +24,8 @@ export default function CareerInner() {
 
 export const carrerloader = async () => {
   const res = await fetch(" http://localhost:4000/careers");
+  if (!res.ok) {
+    throw Error("Not found in carrer :(");
+  }
   return res.json();
 };
