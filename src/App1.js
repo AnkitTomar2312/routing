@@ -11,7 +11,7 @@ import CareerDetails, { careerDetailsLoader } from "./pages/CareerDetails";
 import CareerError from "./pages/CareerError";
 
 import CareerInner, { carrerloader } from "./pages/CareerInner";
-import Contact from "./pages/Contact";
+import Contact, { contactAction } from "./pages/Contact";
 import Error from "./pages/Error";
 import Faq from "./pages/Faq";
 import Help from "./pages/Help";
@@ -25,7 +25,7 @@ const router = createBrowserRouter(
       <Route path="/about" element={<About />} />
       <Route path="/help" element={<Help />}>
         <Route path="faq" element={<Faq />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="contact" element={<Contact />} action={contactAction} />
       </Route>
       <Route path="careers" element={<Career />} errorElement={<CareerError />}>
         <Route index element={<CareerInner />} loader={carrerloader} />
