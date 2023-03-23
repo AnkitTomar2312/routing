@@ -1,9 +1,12 @@
 import React, { Fragment } from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, useLocation } from "react-router-dom";
 import Productcategory from "./ProductCategory";
 import ProductItem from "./ProductItem";
 
 const Product = () => {
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const querySearched = params.get("search");
   return (
     <Fragment>
       <Routes>
@@ -14,6 +17,7 @@ const Product = () => {
         />
         <Route exact path="/product/:id" element={<ProductItem />} />
       </Routes>
+      {querySearched && <h3>Searched for: {querySearched}</h3>}
       <h1>This is Product</h1>
       <ul>
         <li>
